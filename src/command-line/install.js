@@ -21,6 +21,8 @@ program
 			return;
 		}
 
+		log.info("Checking requested package data on npm...");
+
 		packageJson(packageName, {
 			fullMetadata: true
 		}).then((json) => {

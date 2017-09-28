@@ -1,7 +1,7 @@
 "use strict";
 
 const expect = require("chai").expect;
-const Helper = require("../../src/helper");
+const cleanIrcMessage = require("../../src/cleanIrcMessage");
 
 describe("Clean IRC messages", function() {
 	it("should remove all formatting", function() {
@@ -40,7 +40,7 @@ describe("Clean IRC messages", function() {
 			expected: "#thelounge"
 		}];
 
-		const actual = testCases.map((testCase) => Helper.cleanIrcMessage(testCase.input));
+		const actual = testCases.map((testCase) => cleanIrcMessage(testCase.input));
 		const expected = testCases.map((testCase) => testCase.expected);
 
 		expect(actual).to.deep.equal(expected);
